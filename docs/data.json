@@ -8,11 +8,33 @@
       "id": "needs-you",
       "emoji": "🔴",
       "title": "Needs you",
-      "filter": "needs-you",
       "cards": [
         {
+          "id": "chart-marker-batching",
+          "title": "Chart marker batching",
+          "description": "Paul raised lag concerns on chart markers. Needs a batching design; no PR yet.",
+          "action": "Sketch or kick off design/PR for marker batching.",
+          "status": "needs-you",
+          "statusLabel": "Needs you",
+          "repo": "app",
+          "primaryLink": null
+        },
+        {
+          "id": "crossmint-android",
+          "title": "Crossmint USDC on Android",
+          "description": "Enables Crossmint USDC deposits on Android. Undrafted, CI pass, CLEAN/MERGEABLE.",
+          "action": "Merge fomo#7810.",
+          "status": "needs-you",
+          "statusLabel": "Needs you",
+          "repo": "fomo",
+          "primaryLink": {
+            "label": "Open fomo#7810",
+            "url": "https://github.com/fomo-family/fomo/pull/7810"
+          }
+        },
+        {
           "id": "discovery-filters",
-          "title": "Discovery filters (Gabe feedback)",
+          "title": "Discovery filters",
           "description": "Gabe tagged you in #orangie-feedback: start with max token age (Bonding + graduated). Fees paid later; instant trade panel after that.",
           "action": "Reply in the Slack thread with the age-first plan and next steps.",
           "status": "needs-you",
@@ -24,12 +46,38 @@
           }
         },
         {
+          "id": "display-name",
+          "title": "Display name",
+          "description": "Show display name over username. App PR #2713 closed unmerged; web draft web#1085 is still CLEAN. Yellow Polish item still open.",
+          "action": "Decide app follow-up vs web-only path; keep web#1085 moving.",
+          "status": "needs-you",
+          "statusLabel": "Needs you",
+          "repo": "web",
+          "primaryLink": {
+            "label": "Open web#1085",
+            "url": "https://github.com/fomo-family/fomo-web-app/pull/1085"
+          }
+        },
+        {
+          "id": "fast-start-swap",
+          "title": "Fast Start swap confirmation",
+          "description": "Doko PR for Fast Start Solana swap confirmation. Review-requested on you; CI pass but CONFLICTING.",
+          "action": "Resolve conflicts or ask Doko to rebase, then review app#2512.",
+          "status": "needs-you",
+          "statusLabel": "Needs you",
+          "repo": "app",
+          "primaryLink": {
+            "label": "Open app#2512",
+            "url": "https://github.com/fomo-family/fomo-app/pull/2512"
+          }
+        },
+        {
           "id": "follow-digest",
           "title": "Follow digest → followers list",
           "description": "Se: digest currently lands on one follower. Keeper PR is undrafted CLEAN/MERGEABLE. Duplicate fomo#8615 closed overnight unmerged.",
           "action": "Merge fomo#8053, then confirm the Slack thread.",
           "status": "needs-you",
-          "statusLabel": "Merge ready",
+          "statusLabel": "Needs you",
           "repo": "fomo",
           "primaryLink": {
             "label": "Open fomo#8053",
@@ -43,25 +91,12 @@
           ]
         },
         {
-          "id": "crossmint-android-merge",
-          "title": "Crossmint USDC on Android",
-          "description": "Enables Crossmint USDC deposits on Android. Undrafted, CI pass, CLEAN/MERGEABLE.",
-          "action": "Merge fomo#7810.",
-          "status": "needs-you",
-          "statusLabel": "Merge ready",
-          "repo": "fomo",
-          "primaryLink": {
-            "label": "Open fomo#7810",
-            "url": "https://github.com/fomo-family/fomo/pull/7810"
-          }
-        },
-        {
           "id": "google-pay-usdc",
           "title": "Google Pay USDC deposit",
           "description": "Enables Google Pay in the USDC deposit flow. Undrafted, CI pass, MERGEABLE but BLOCKED — review required.",
           "action": "Get/do the required review, then merge app#2666.",
           "status": "needs-you",
-          "statusLabel": "Review blocked",
+          "statusLabel": "Needs you",
           "repo": "app",
           "primaryLink": {
             "label": "Open app#2666",
@@ -69,62 +104,27 @@
           }
         },
         {
-          "id": "fast-start-swap",
-          "title": "Fast Start Solana swap confirmation",
-          "description": "Doko PR for Fast Start Solana swap confirmation. Review-requested on you; CI pass but CONFLICTING.",
-          "action": "Resolve conflicts or ask Doko to rebase, then review app#2512.",
+          "id": "hide-dust-trades-count",
+          "title": "Hide dust from trades count",
+          "description": "Ian said “yep” with Se Sep 23. Trade-count exclude-transfers definition still open.",
+          "action": "Confirm exclude-transfers rule, then ship the trades-count fix.",
           "status": "needs-you",
-          "statusLabel": "Review · conflicting",
+          "statusLabel": "Needs you",
           "repo": "app",
-          "primaryLink": {
-            "label": "Open app#2512",
-            "url": "https://github.com/fomo-family/fomo-app/pull/2512"
-          }
+          "primaryLink": null
         },
         {
           "id": "lucide-imports",
-          "title": "Lucide → individual icon imports",
+          "title": "Lucide individual icon imports",
           "description": "Doko/Margelo PR switching Lucide to individual icon imports. Review-requested; CI pass but CONFLICTING.",
           "action": "Resolve conflicts or ask for rebase, then review app#2688.",
           "status": "needs-you",
-          "statusLabel": "Review · conflicting",
+          "statusLabel": "Needs you",
           "repo": "app",
           "primaryLink": {
             "label": "Open app#2688",
             "url": "https://github.com/fomo-family/fomo-app/pull/2688"
           }
-        },
-        {
-          "id": "svg-icon-fonts",
-          "title": "SVG → icon fonts",
-          "description": "Doko PR converting SVGs to icon fonts. Review-requested on Ian + Tina; CI pass but CONFLICTING.",
-          "action": "Resolve conflicts or ask for rebase, then review app#2528.",
-          "status": "needs-you",
-          "statusLabel": "Review · conflicting",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Open app#2528",
-            "url": "https://github.com/fomo-family/fomo-app/pull/2528"
-          }
-        },
-        {
-          "id": "drafts-baking",
-          "title": "Bottom-sheet gap + perps header PnL drafts",
-          "description": "app#2723 (bottom-sheet gap) and app#2725 (perps header PnL ↔ chart range) are draft, CI pass, MERGEABLE. Re-device blocked on Mac pool hang — no new galleries.",
-          "action": "Hold merge until Mac pool recovers and device checks pass; watch overnight.",
-          "status": "needs-you",
-          "statusLabel": "Watch · device blocked",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Open app#2723",
-            "url": "https://github.com/fomo-family/fomo-app/pull/2723"
-          },
-          "secondaryLinks": [
-            {
-              "label": "app#2725",
-              "url": "https://github.com/fomo-family/fomo-app/pull/2725"
-            }
-          ]
         },
         {
           "id": "pre-fee-rollout",
@@ -132,185 +132,40 @@
           "description": "Ian owning: pre-fee on invested (position + share cards), global/alerts/coin/clan feeds, notifications; post-fee on txn history + PNL. Success toast is separate. Proposal locked Sep 23.",
           "action": "Drive implementation against the locked proposal; keep toast separate.",
           "status": "needs-you",
-          "statusLabel": "Owning",
+          "statusLabel": "Needs you",
           "repo": "app",
           "primaryLink": null
         },
         {
-          "id": "chart-marker-batching",
-          "title": "Chart marker batching design",
-          "description": "Paul lag concern — batching design needed. No PR yet.",
-          "action": "Sketch or kick off design/PR for marker batching.",
+          "id": "referral-schema",
+          "title": "Referral verify schema",
+          "description": "Referral verify schema decision still open. Blocks implementation.",
+          "action": "Decide schema before implementation.",
           "status": "needs-you",
-          "statusLabel": "Design needed",
-          "repo": "app",
-          "primaryLink": null
-        },
-        {
-          "id": "hide-dust-trades-count",
-          "title": "Hide dust from profile trades count",
-          "description": "Ian said “yep” with Se Sep 23. Trade-count exclude-transfers definition still open.",
-          "action": "Confirm exclude-transfers rule, then ship the trades-count fix.",
-          "status": "needs-you",
-          "statusLabel": "Decision open",
-          "repo": "app",
-          "primaryLink": null
-        },
-        {
-          "id": "dust-tx-browsing",
-          "title": "Dust / tx browsing design",
-          "description": "Need Chelsy design. Avg-size auto-hide + footer toggle may supersede fixed min-USD Transfers drafts.",
-          "action": "Align with Chelsy before pushing min-USD drafts further.",
-          "status": "needs-you",
-          "statusLabel": "Design needed",
-          "repo": "app",
-          "primaryLink": null
-        },
-        {
-          "id": "display-name-stack",
-          "title": "Display-name stack",
-          "description": "app#2713 closed unmerged. Web draft web#1085 is still CLEAN. Yellow Polish item still open.",
-          "action": "Decide app follow-up vs web-only path; keep web#1085 moving.",
-          "status": "needs-you",
-          "statusLabel": "Decide path",
-          "repo": "web",
-          "primaryLink": {
-            "label": "Open web#1085",
-            "url": "https://github.com/fomo-family/fomo-web-app/pull/1085"
-          }
-        },
-        {
-          "id": "share-ref-codes",
-          "title": "Share links populate ref codes",
-          "description": "Coin + profile share links should populate referral codes (AppsFlyer OneLink likely). Ian-tagged July–Sept New This Week; no PR yet.",
-          "action": "Scope OneLink wiring and open a PR.",
-          "status": "needs-you",
-          "statusLabel": "Not started",
-          "repo": "app",
-          "primaryLink": null
-        }
-      ]
-    },
-    {
-      "id": "ready-yours",
-      "emoji": "🟢",
-      "title": "Ready — yours",
-      "filter": "review",
-      "cards": [
-        {
-          "id": "ready-crossmint",
-          "title": "Crossmint USDC deposits on Android",
-          "description": "Your PR enabling Crossmint USDC deposits on Android. Undrafted, CI pass, CLEAN/MERGEABLE.",
-          "action": "Merge when ready.",
-          "status": "ready-yours",
-          "statusLabel": "Mergeable",
+          "statusLabel": "Needs you",
           "repo": "fomo",
-          "primaryLink": {
-            "label": "Open fomo#7810",
-            "url": "https://github.com/fomo-family/fomo/pull/7810"
-          }
+          "primaryLink": null
         },
         {
-          "id": "ready-google-pay",
-          "title": "Google Pay in USDC deposit",
-          "description": "Your PR enabling Google Pay in USDC deposit. Undrafted, CI pass, MERGEABLE but blocked on required review.",
-          "action": "Unblock review, then merge.",
-          "status": "ready-yours",
-          "statusLabel": "Blocked · review",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Open app#2666",
-            "url": "https://github.com/fomo-family/fomo-app/pull/2666"
-          }
-        }
-      ]
-    },
-    {
-      "id": "ready-others",
-      "emoji": "🟡",
-      "title": "Ready — others",
-      "filter": "review",
-      "cards": [
-        {
-          "id": "others-fast-start",
-          "title": "Fast Start Solana swap confirmation",
-          "description": "Doko — review-requested on you. CI pass, CONFLICTING.",
-          "action": "Review after conflicts are cleared.",
-          "status": "ready-others",
-          "statusLabel": "Review · conflicting",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Open app#2512",
-            "url": "https://github.com/fomo-family/fomo-app/pull/2512"
-          }
-        },
-        {
-          "id": "others-lucide",
-          "title": "Lucide individual imports",
-          "description": "Doko/Margelo — review-requested on you. CI pass, CONFLICTING.",
-          "action": "Review after conflicts are cleared.",
-          "status": "ready-others",
-          "statusLabel": "Review · conflicting",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Open app#2688",
-            "url": "https://github.com/fomo-family/fomo-app/pull/2688"
-          }
-        },
-        {
-          "id": "others-svg-fonts",
+          "id": "svg-icon-fonts",
           "title": "SVG → icon fonts",
-          "description": "Doko — review-requested on Ian + Tina. CI pass, CONFLICTING.",
-          "action": "Review after conflicts are cleared.",
-          "status": "ready-others",
-          "statusLabel": "Review · conflicting",
+          "description": "Doko PR converting SVGs to icon fonts. Review-requested on Ian + Tina; CI pass but CONFLICTING.",
+          "action": "Resolve conflicts or ask for rebase, then review app#2528.",
+          "status": "needs-you",
+          "statusLabel": "Needs you",
           "repo": "app",
           "primaryLink": {
             "label": "Open app#2528",
             "url": "https://github.com/fomo-family/fomo-app/pull/2528"
           }
-        }
-      ]
-    },
-    {
-      "id": "in-progress",
-      "emoji": "🔵",
-      "title": "In progress",
-      "filter": "all",
-      "cards": [
-        {
-          "id": "ip-bottom-sheet",
-          "title": "Bottom sheet edge gap",
-          "description": "Draft fixing bottom-sheet edge gap. CI pass, MERGEABLE; device FAIL overnight (Mac pool).",
-          "action": "Wait for Mac pool; re-run device checks before undraft.",
-          "status": "in-progress",
-          "statusLabel": "Draft · device blocked",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Open app#2723",
-            "url": "https://github.com/fomo-family/fomo-app/pull/2723"
-          }
         },
         {
-          "id": "ip-perps-pnl",
-          "title": "Perps header PnL ↔ chart range",
-          "description": "Draft wiring perps header PnL to chart range. CI pass, MERGEABLE; updated ~10:25pm ET Sep 24. Device FAIL overnight (Mac pool).",
-          "action": "Wait for Mac pool; re-run device checks before undraft.",
-          "status": "in-progress",
-          "statusLabel": "Draft · device blocked",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Open app#2725",
-            "url": "https://github.com/fomo-family/fomo-app/pull/2725"
-          }
-        },
-        {
-          "id": "ip-transfers-min-usd",
-          "title": "Transfers min USD (Transfers tab)",
-          "description": "Cross-stack drafts: fomo#8516 + app#2712 + web#1082. CI pass, MERGEABLE. Watch dust redesign — may supersede.",
-          "action": "Hold hard push until dust/tx design settles with Chelsy.",
-          "status": "in-progress",
-          "statusLabel": "Draft · watch redesign",
+          "id": "transfers-dust",
+          "title": "Transfers / dust browsing",
+          "description": "Need Chelsy design for dust/tx browsing (avg-size auto-hide + footer toggle may supersede fixed min-USD). Cross-stack min-USD drafts already baking: fomo#8516 + app#2712 + web#1082 (CI pass, MERGEABLE).",
+          "action": "Align with Chelsy before pushing min-USD drafts further.",
+          "status": "needs-you",
+          "statusLabel": "Needs you",
           "repo": "app",
           "primaryLink": {
             "label": "Open app#2712",
@@ -326,14 +181,60 @@
               "url": "https://github.com/fomo-family/fomo-web-app/pull/1082"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "started",
+      "emoji": "🔵",
+      "title": "Started",
+      "cards": [
+        {
+          "id": "bottom-sheet-gap",
+          "title": "Bottom sheet edge gap",
+          "description": "Draft fixing bottom-sheet edge gap. CI pass, MERGEABLE; device FAIL overnight (Mac pool hang — no new galleries).",
+          "action": "Wait for Mac pool; re-run device checks before undraft.",
+          "status": "started",
+          "statusLabel": "Started",
+          "repo": "app",
+          "primaryLink": {
+            "label": "Open app#2723",
+            "url": "https://github.com/fomo-family/fomo-app/pull/2723"
+          }
         },
         {
-          "id": "ip-sold-amount",
+          "id": "infinite-scroll",
+          "title": "Infinite scroll feeds",
+          "description": "Web draft for infinite scroll on token/alerts feeds. CI pass, CLEAN.",
+          "action": "Continue; undraft when ready.",
+          "status": "started",
+          "statusLabel": "Started",
+          "repo": "web",
+          "primaryLink": {
+            "label": "Open web#1071",
+            "url": "https://github.com/fomo-family/fomo-web-app/pull/1071"
+          }
+        },
+        {
+          "id": "perps-header-pnl",
+          "title": "Perps header PnL ↔ chart range",
+          "description": "Draft wiring perps header PnL to chart range. CI pass, MERGEABLE; updated ~10:25pm ET Sep 24. Device FAIL overnight (Mac pool).",
+          "action": "Wait for Mac pool; re-run device checks before undraft.",
+          "status": "started",
+          "statusLabel": "Started",
+          "repo": "app",
+          "primaryLink": {
+            "label": "Open app#2725",
+            "url": "https://github.com/fomo-family/fomo-app/pull/2725"
+          }
+        },
+        {
+          "id": "sold-amount",
           "title": "Sold amount on open positions",
           "description": "Drafts showing sold amount on open positions: app#2710 + web#1084. CI pass, MERGEABLE.",
           "action": "Continue polish; undraft when ready for review.",
-          "status": "in-progress",
-          "statusLabel": "Draft",
+          "status": "started",
+          "statusLabel": "Started",
           "repo": "app",
           "primaryLink": {
             "label": "Open app#2710",
@@ -347,25 +248,12 @@
           ]
         },
         {
-          "id": "ip-display-name",
-          "title": "Display-name-only",
-          "description": "Web draft for display-name-only treatment. CI pass, CLEAN. App counterpart closed unmerged.",
-          "action": "Keep web#1085 moving; decide if app needs a new PR.",
-          "status": "in-progress",
-          "statusLabel": "Draft · CLEAN",
-          "repo": "web",
-          "primaryLink": {
-            "label": "Open web#1085",
-            "url": "https://github.com/fomo-family/fomo-web-app/pull/1085"
-          }
-        },
-        {
-          "id": "ip-thesis-mc",
-          "title": "Thesis MC snapshot wire-up",
-          "description": "App Eng device PASS on app#2709; web#1083 still draft. Designs still parked on yellow Polish.",
+          "id": "thesis-mc",
+          "title": "Thesis MC snapshot",
+          "description": "App Eng device PASS on app#2709; web#1083 still draft. Related designs still parked on yellow Polish.",
           "action": "Finish web wire-up; leave parked designs unless unblocked.",
-          "status": "in-progress",
-          "statusLabel": "In progress",
+          "status": "started",
+          "statusLabel": "Started",
           "repo": "app",
           "primaryLink": {
             "label": "Open app#2709",
@@ -377,92 +265,71 @@
               "url": "https://github.com/fomo-family/fomo-web-app/pull/1083"
             }
           ]
-        },
-        {
-          "id": "ip-pre-fee",
-          "title": "Pre-fee everywhere",
-          "description": "Ian owning. Proposal locked Sep 23. Pre-fee on invested/feeds/notifications; post-fee on txn history + PNL.",
-          "action": "Implement against locked proposal.",
-          "status": "in-progress",
-          "statusLabel": "Owning",
-          "repo": "app",
-          "primaryLink": null
-        },
-        {
-          "id": "ip-infinite-scroll",
-          "title": "Infinite scroll token/alerts feeds",
-          "description": "Web draft for infinite scroll on token/alerts feeds. CI pass, CLEAN.",
-          "action": "Continue; undraft when ready.",
-          "status": "in-progress",
-          "statusLabel": "Draft · CLEAN",
-          "repo": "web",
-          "primaryLink": {
-            "label": "Open web#1071",
-            "url": "https://github.com/fomo-family/fomo-web-app/pull/1071"
-          }
-        },
-        {
-          "id": "ip-follow-digest",
-          "title": "Follow digest (keeper)",
-          "description": "fomo#8053 READY — also under Needs you. Sole keeper after #8615 closed.",
-          "action": "Merge (see Needs you).",
-          "status": "in-progress",
-          "statusLabel": "Ready to merge",
-          "repo": "fomo",
-          "primaryLink": {
-            "label": "Open fomo#8053",
-            "url": "https://github.com/fomo-family/fomo/pull/8053"
-          }
         }
       ]
     },
     {
-      "id": "park",
-      "emoji": "🅿️",
-      "title": "Park",
-      "filter": "all",
+      "id": "not-started",
+      "emoji": "⚪",
+      "title": "Not started",
       "cards": [
         {
-          "id": "park-uk-finprom",
-          "title": "UK FinProm risk warning banner",
-          "description": "Parked PR for UK FinProm risk warning banner.",
-          "action": "Leave parked unless compliance reopens.",
-          "status": "park",
-          "statusLabel": "Parked",
+          "id": "fee-breakdown-lucas",
+          "title": "Fee-breakdown row with Lucas",
+          "description": "tokenTransferFeePct fee-breakdown row. Distinct from standing skip on transfer-tax / price-impact removal.",
+          "action": "Align with Lucas, then implement.",
+          "status": "not-started",
+          "statusLabel": "Not started",
           "repo": "app",
-          "primaryLink": {
-            "label": "Open app#1798",
-            "url": "https://github.com/fomo-family/fomo-app/pull/1798"
-          }
+          "primaryLink": null
         },
         {
-          "id": "park-autosana",
+          "id": "rich-push-chelsy",
+          "title": "Rich push (Chelsy pfps)",
+          "description": "Rich push with Chelsy profile photos on trader-alert pushes only. No PR yet.",
+          "action": "Scope with Chelsy when bandwidth allows.",
+          "status": "not-started",
+          "statusLabel": "Not started",
+          "repo": "app",
+          "primaryLink": null
+        },
+        {
+          "id": "share-ref-codes",
+          "title": "Share links populate ref codes",
+          "description": "Coin + profile share links should populate referral codes (AppsFlyer OneLink likely). Ian-tagged July–Sept New This Week; no PR yet.",
+          "action": "Scope OneLink wiring and open a PR.",
+          "status": "not-started",
+          "statusLabel": "Not started",
+          "repo": "app",
+          "primaryLink": null
+        }
+      ]
+    },
+    {
+      "id": "parked",
+      "emoji": "🅿️",
+      "title": "Parked",
+      "cards": [
+        {
+          "id": "autosana",
           "title": "Autosana PR video pilot",
           "description": "Parked Autosana PR video pilot.",
           "action": "Leave parked.",
-          "status": "park",
+          "status": "parked",
           "statusLabel": "Parked",
           "repo": "app",
           "primaryLink": {
             "label": "Open app#2291",
             "url": "https://github.com/fomo-family/fomo-app/pull/2291"
           }
-        }
-      ]
-    },
-    {
-      "id": "decisions",
-      "emoji": "⚪",
-      "title": "Decisions / not started",
-      "filter": "decisions",
-      "cards": [
+        },
         {
-          "id": "dec-avg-exit",
-          "title": "Avg exit from first sell",
-          "description": "July–Sept yellow Polish. HOLD until pool-price entry/exit lands.",
+          "id": "avg-exit",
+          "title": "Avg exit (+ chart line)",
+          "description": "Avg exit from first sell and avg-exit line on chart. HOLD until pool-price entry/exit lands (yellow Polish).",
           "action": "Do not start until pool-price entry/exit is ready.",
-          "status": "decision",
-          "statusLabel": "HOLD",
+          "status": "parked",
+          "statusLabel": "Parked",
           "repo": "app",
           "primaryLink": {
             "label": "Notion Polish",
@@ -470,25 +337,12 @@
           }
         },
         {
-          "id": "dec-avg-exit-line",
-          "title": "Avg exit line on chart",
-          "description": "HOLD with avg-exit (yellow Polish).",
-          "action": "Park with avg-exit dependency.",
-          "status": "decision",
-          "statusLabel": "HOLD",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Notion Polish",
-            "url": "https://app.notion.com/p/387bac0068ef8002a5d9c040376f4df4"
-          }
-        },
-        {
-          "id": "dec-base-pair",
-          "title": "Base pair / underlying pool (web)",
-          "description": "Yellow Polish — park designs.",
+          "id": "base-pool-pair",
+          "title": "Base / pool pair designs",
+          "description": "Base pair / underlying pool on web. Yellow Polish — park designs.",
           "action": "Leave designs parked.",
-          "status": "decision",
-          "statusLabel": "Park designs",
+          "status": "parked",
+          "statusLabel": "Parked",
           "repo": "web",
           "primaryLink": {
             "label": "Notion Polish",
@@ -496,25 +350,12 @@
           }
         },
         {
-          "id": "dec-launchpad-link",
-          "title": "Launchpad site link (mobile)",
-          "description": "Blocked on data provider URL (yellow Polish).",
-          "action": "Unblock when provider URL exists.",
-          "status": "decision",
-          "statusLabel": "Blocked",
-          "repo": "app",
-          "primaryLink": {
-            "label": "Notion Polish",
-            "url": "https://app.notion.com/p/387bac0068ef8002a5d9c040376f4df4"
-          }
-        },
-        {
-          "id": "dec-click-copy-x",
+          "id": "click-to-copy-x",
           "title": "Click-to-copy for X links",
           "description": "Voice: no-op for now (yellow Polish).",
           "action": "Leave as no-op unless voice changes.",
-          "status": "decision",
-          "statusLabel": "No-op",
+          "status": "parked",
+          "statusLabel": "Parked",
           "repo": "app",
           "primaryLink": {
             "label": "Notion Polish",
@@ -522,12 +363,12 @@
           }
         },
         {
-          "id": "dec-swaps-trades",
-          "title": "Swaps → “trades” on profile/clans",
-          "description": "DONE in product; Notion yellow still uncleared.",
-          "action": "Clear the Notion yellow checkbox.",
-          "status": "decision",
-          "statusLabel": "Done · clear Notion",
+          "id": "launchpad-link",
+          "title": "Launchpad site link",
+          "description": "Mobile launchpad site link. Blocked on data provider URL (yellow Polish).",
+          "action": "Unblock when provider URL exists.",
+          "status": "parked",
+          "statusLabel": "Parked",
           "repo": "app",
           "primaryLink": {
             "label": "Notion Polish",
@@ -535,44 +376,27 @@
           }
         },
         {
-          "id": "dec-rich-push",
-          "title": "Rich push: Chelsy pfps on trader alerts",
-          "description": "Rich push with Chelsy profile photos on trader-alert pushes only. Not started.",
-          "action": "Scope with Chelsy when bandwidth allows.",
-          "status": "decision",
-          "statusLabel": "Not started",
-          "repo": "app",
-          "primaryLink": null
-        },
-        {
-          "id": "dec-referral-schema",
-          "title": "Referral verify schema",
-          "description": "Referral verify schema decision still open. Not started.",
-          "action": "Decide schema before implementation.",
-          "status": "decision",
-          "statusLabel": "Decision needed",
-          "repo": "fomo",
-          "primaryLink": null
-        },
-        {
-          "id": "dec-fee-breakdown",
-          "title": "Fee-breakdown row with Lucas",
-          "description": "tokenTransferFeePct fee-breakdown row. Distinct from standing skip on transfer-tax / price-impact removal.",
-          "action": "Align with Lucas, then implement.",
-          "status": "decision",
-          "statusLabel": "Align with Lucas",
-          "repo": "app",
-          "primaryLink": null
-        },
-        {
-          "id": "dec-standing-skips",
-          "title": "Standing skips (do not work)",
+          "id": "standing-skips",
+          "title": "Standing skips",
           "description": "Do not work unless reopened: transfer-tax / price-impact tax removal; friends feed filters; holders multi-sort.",
           "action": "Ignore unless explicitly reopened.",
-          "status": "decision",
-          "statusLabel": "Standing skip",
+          "status": "parked",
+          "statusLabel": "Parked",
           "repo": "app",
           "primaryLink": null
+        },
+        {
+          "id": "uk-finprom",
+          "title": "UK FinProm risk warning",
+          "description": "Parked PR for UK FinProm risk warning banner.",
+          "action": "Leave parked unless compliance reopens.",
+          "status": "parked",
+          "statusLabel": "Parked",
+          "repo": "app",
+          "primaryLink": {
+            "label": "Open app#1798",
+            "url": "https://github.com/fomo-family/fomo-app/pull/1798"
+          }
         }
       ]
     }
