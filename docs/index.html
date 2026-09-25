@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>Ian eng plate</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --bg-elev: #12151d;
+      --bg-card: #161a24;
+      --bg-card-hover: #1b2030;
+      --border: #262b3a;
+      --border-soft: #1e2330;
+      --text: #e8eaf0;
+      --text-muted: #9aa3b5;
+      --text-dim: #6b7385;
+      --accent: #6ea8ff;
+      --chip-bg: #1e2433;
+      --shadow: 0 1px 0 rgba(255,255,255,0.03) inset, 0 8px 24px rgba(0,0,0,0.28);
+      --radius: 14px;
+      --radius-sm: 999px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --needs: #ff6b6b;
+      --ready: #3dd68c;
+      --others: #f5c542;
+      --progress: #5b9dff;
+      --park: #8b95a8;
+      --decision: #a8b0c0;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 20px 16px 64px;
+    }
+
+    header.top {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(11, 13, 18, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+      margin: -20px -16px 20px;
+      padding: 16px 16px 12px;
+    }
+
+    .header-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px 14px;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .updated {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .filter-chip {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--chip-bg);
+      color: var(--text-muted);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .filter-chip:hover { color: var(--text); border-color: #3a4258; }
+    .filter-chip.active {
+      background: #24304a;
+      color: #fff;
+      border-color: #3d5a8a;
+    }
+
+    .stats {
+      margin-top: 10px;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    section.plate-section {
+      margin: 28px 0 8px;
+    }
+    section.plate-section.hidden { display: none; }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .count {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      background: var(--chip-bg);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    .cards {
+      display: grid;
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 14px 12px;
+      box-shadow: var(--shadow);
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: #32384c;
+    }
+    .card.hidden { display: none; }
+
+    .card-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 650;
+      letter-spacing: -0.015em;
+      flex: 1 1 180px;
+      line-height: 1.3;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 650;
+      padding: 4px 9px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .chip.status-needs-you { background: rgba(255,107,107,0.14); color: #ff8f8f; border-color: rgba(255,107,107,0.28); }
+    .chip.status-ready-yours { background: rgba(61,214,140,0.12); color: #5ee0a0; border-color: rgba(61,214,140,0.28); }
+    .chip.status-ready-others { background: rgba(245,197,66,0.12); color: #f7d06a; border-color: rgba(245,197,66,0.28); }
+    .chip.status-in-progress { background: rgba(91,157,255,0.14); color: #8bb6ff; border-color: rgba(91,157,255,0.28); }
+    .chip.status-park { background: rgba(139,149,168,0.14); color: #b0b8c8; border-color: rgba(139,149,168,0.28); }
+    .chip.status-decision { background: rgba(168,176,192,0.12); color: #c4cad6; border-color: rgba(168,176,192,0.25); }
+
+    .chip.repo {
+      background: #1a1f2c;
+      color: var(--text-muted);
+      border-color: var(--border);
+      font-family: var(--mono);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: lowercase;
+    }
+    .chip.repo-app { color: #9ec5ff; }
+    .chip.repo-web { color: #9ae6b4; }
+    .chip.repo-fomo { color: #f6ad55; }
+    .chip.repo-slack { color: #e9a8ff; }
+
+    .desc, .action {
+      margin: 0 0 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .action {
+      color: var(--text);
+      font-size: 0.88rem;
+    }
+    .action strong {
+      color: var(--text-dim);
+      font-weight: 650;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-right: 6px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #2a60d4;
+      color: #fff !important;
+      text-decoration: none !important;
+      font-size: 0.82rem;
+      font-weight: 650;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid #3a72ea;
+    }
+    .btn:hover { background: #3670ea; }
+    .btn.secondary {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text-muted) !important;
+    }
+    .btn.secondary:hover {
+      border-color: #3a4258;
+      color: var(--text) !important;
+    }
+    .no-link {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-soft);
+      color: var(--text-dim);
+      font-size: 0.78rem;
+    }
+
+    .empty {
+      display: none;
+      margin: 32px 0;
+      padding: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-elev);
+    }
+    .empty.show { display: block; }
+
+    @media (max-width: 520px) {
+      .wrap { padding: 16px 12px 48px; }
+      header.top { margin: -16px -12px 16px; padding: 14px 12px 10px; }
+      h1 { font-size: 1.2rem; }
+      .card { padding: 12px; }
+      .card-title { font-size: 0.98rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="header-row">
+        <h1>Ian eng plate</h1>
+        <div class="updated" id="updated">Loading…</div>
+      </div>
+      <div class="filters" role="tablist" aria-label="Filter plate">
+        <button class="filter-chip active" data-filter="all" type="button">All</button>
+        <button class="filter-chip" data-filter="needs-you" type="button">Needs you</button>
+        <button class="filter-chip" data-filter="review" type="button">Review</button>
+        <button class="filter-chip" data-filter="decisions" type="button">Decisions</button>
+      </div>
+      <div class="stats" id="stats"></div>
+    </header>
+
+    <div id="board"></div>
+    <div class="empty" id="empty">No cards match this filter.</div>
+
+    <footer>
+      Source of truth: weekday plate brief → <code>data.json</code>.
+      Public repo: <a href="https://github.com/ianlapham/eng-plate">ianlapham/eng-plate</a>.
+      No secrets. Bookmark this page.
+    </footer>
+  </div>
+
+  <script>
+    const STATUS_CLASS = {
+      "needs-you": "status-needs-you",
+      "ready-yours": "status-ready-yours",
+      "ready-others": "status-ready-others",
+      "in-progress": "status-in-progress",
+      "park": "status-park",
+      "decision": "status-decision"
+    };
+
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function renderCard(card) {
+      const statusClass = STATUS_CLASS[card.status] || "status-decision";
+      const repoClass = "repo-" + (card.repo || "app");
+      const secondary = (card.secondaryLinks || []).map(l =>
+        `<a class="btn secondary" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a>`
+      ).join("");
+      const primary = card.primaryLink
+        ? `<a class="btn" href="${esc(card.primaryLink.url)}" target="_blank" rel="noopener noreferrer">${esc(card.primaryLink.label)} →</a>`
+        : `<span class="no-link">No PR/link yet</span>`;
+
+      return `
+        <article class="card" data-filter-tags="${esc(card._tags.join(" "))}">
+          <div class="card-top">
+            <h3 class="card-title">${esc(card.title)}</h3>
+            <div class="chips">
+              <span class="chip ${statusClass}">${esc(card.statusLabel)}</span>
+              <span class="chip repo ${repoClass}">${esc(card.repo)}</span>
+            </div>
+          </div>
+          <p class="desc">${esc(card.description)}</p>
+          <p class="action"><strong>Do</strong>${esc(card.action)}</p>
+          <div class="links">${primary}${secondary}</div>
+        </article>
+      `;
+    }
+
+    function sectionMatches(section, filter) {
+      if (filter === "all") return true;
+      if (filter === "needs-you") return section.id === "needs-you";
+      if (filter === "review") return section.id === "ready-yours" || section.id === "ready-others" || section.id === "needs-you";
+      if (filter === "decisions") return section.id === "decisions";
+      return true;
+    }
+
+    function cardMatches(card, filter, section) {
+      if (filter === "all") return true;
+      if (filter === "needs-you") return section.id === "needs-you";
+      if (filter === "review") {
+        const label = (card.statusLabel || "").toLowerCase();
+        const title = (card.title || "").toLowerCase();
+        const action = (card.action || "").toLowerCase();
+        return (
+          section.id === "ready-yours" ||
+          section.id === "ready-others" ||
+          label.includes("review") ||
+          label.includes("merge") ||
+          action.includes("review") ||
+          action.includes("merge")
+        );
+      }
+      if (filter === "decisions") return section.id === "decisions";
+      return true;
+    }
+
+    let DATA = null;
+    let currentFilter = "all";
+
+    function render() {
+      if (!DATA) return;
+      const board = document.getElementById("board");
+      const empty = document.getElementById("empty");
+      let visibleCards = 0;
+      let html = "";
+
+      for (const section of DATA.sections) {
+        const cardsHtml = section.cards
+          .map(card => {
+            card._tags = [section.filter, card.status, section.id];
+            const show = cardMatches(card, currentFilter, section);
+            if (!show) return "";
+            visibleCards += 1;
+            return renderCard(card);
+          })
+          .join("");
+
+        const showSection = sectionMatches(section, currentFilter) && cardsHtml.length > 0;
+        if (!showSection) continue;
+
+        html += `
+          <section class="plate-section" data-section="${esc(section.id)}">
+            <div class="section-head">
+              <h2>${esc(section.emoji)} ${esc(section.title)}</h2>
+              <span class="count">${section.cards.filter(c => cardMatches(c, currentFilter, section)).length}</span>
+            </div>
+            <div class="cards">${cardsHtml}</div>
+          </section>
+        `;
+      }
+
+      board.innerHTML = html;
+      empty.classList.toggle("show", visibleCards === 0);
+
+      const total = DATA.sections.reduce((n, s) => n + s.cards.length, 0);
+      document.getElementById("stats").textContent =
+        currentFilter === "all"
+          ? `${total} cards · ${DATA.sections.length} sections`
+          : `${visibleCards} cards shown`;
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll(".filter-chip").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.filter === filter);
+      });
+      render();
+    }
+
+    document.querySelectorAll(".filter-chip").forEach(btn => {
+      btn.addEventListener("click", () => setFilter(btn.dataset.filter));
+    });
+
+    fetch("./data.json", { cache: "no-store" })
+      .then(r => {
+        if (!r.ok) throw new Error("Failed to load data.json");
+        return r.json();
+      })
+      .then(data => {
+        DATA = data;
+        document.getElementById("updated").textContent = "Updated " + data.lastUpdated;
+        document.title = data.title + " · eng plate";
+        render();
+      })
+      .catch(err => {
+        document.getElementById("updated").textContent = "Failed to load plate data";
+        document.getElementById("board").innerHTML =
+          `<div class="empty show">Could not load data.json (${esc(err.message)}).</div>`;
+      });
+  </script>
+</body>
+</html>
